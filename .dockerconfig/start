@@ -1,0 +1,24 @@
+#!/bin/bash
+
+set -e
+
+role=${CONTAINER_ROLE:-app}
+
+if [[ "$role" = "queue" ]]; then
+
+    #php /var/www/html/artisan horizon
+    exec supervisord --nodaemon --configuration /etc/supervisor/supervisord.conf
+
+elif [[ "$role" = "scheduler" ]]; then
+
+    while [[ true ]]
+    do
+      php /var/www/html/artisan schedule:run --verbose --no-interaction &
+      sleep 60
+    done
+
+else
+    php /var/www/html/artisan migrate --force
+    php /var/www/html/artisan optimize
+    /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+fi

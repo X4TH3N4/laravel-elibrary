@@ -34,6 +34,6 @@ Access the admin panel at `http://localhost/admin`.
 ## Tech Stack
 - Laravel
 - FilamentPHP
-- PostreSQL
+- PostgreSQL
 ## License
 This project is licensed under the MIT License.

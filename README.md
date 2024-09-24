@@ -1,6 +1,3 @@
-
-#### README.md:
-```markdown
 # Laravel eLibrary Management
 
 A digital library management system built with **Laravel** and **FilamentPHP**. This project focuses on managing digital resources, user access, and resource categorization with ease.
@@ -35,5 +32,6 @@ Access the admin panel at `http://localhost/admin`.
 - Laravel
 - FilamentPHP
 - PostgreSQL
+
 ## License
 This project is licensed under the MIT License.
